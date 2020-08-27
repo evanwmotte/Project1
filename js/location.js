@@ -1,0 +1,93 @@
+$(document).foundation()
+// API call for lat and lon for user address *  ID #addressInput is not added to html yet
+
+$(".searchBtn2").on("click", function() {
+event.preventDefault();
+var mapAddress = $(".address").val().trim();
+var mapApiKey = "0vNJz85K0zDLzjPpKxVQV7kcdfKBGP6W";
+var radius = $(".distance").val().trim();
+var cravingOrder = $(".menuItems").val().trim();
+console.log(mapAddress)
+console.log(radius)
+console.log(cravingOrder)
+
+var mapUrl = `https://www.mapquestapi.com/geocoding/v1/address?key=${mapApiKey}&inFormat=kvp&outFormat=json&location=${mapAddress}&thumbMaps=false`
+console.log(mapUrl)
+
+
+$.ajax({
+  url: mapUrl,
+  method: "GET"
+}).then(function (response) {
+  console.log(response)
+  var userLat = response.results[0].locations[0].displayLatLng.lat
+  var userLon = response.results[0].locations[0].displayLatLng.lng
+  var tomApiKey = "eHGzznMSA8UfAHuJHoE7tt8EZZfZ6oUy"
+  var tomUrl = `https://api.tomtom.com/search/2/search/${cravingOrder}.json?countrySet=US&lat=${userLat}&lon=${userLon}&radius=${radius}&idxSet=POI&categorySet=7315&key=${tomApiKey}`
+  var responseIdArray = [];
+  console.log(tomUrl)
+  
+  $.ajax({
+    url: tomUrl,
+    method: "GET"
+  }).then(function (response) {
+    console.log(response)
+      
+      //var nutriAppId = "24813f7b"
+      //var nutriApiKey = "b5ba0affef96ec2e56a79c6a3f3e155c"
+      //var restaurant = poiName.trim().replace(/ /g, '%20')
+      for (i = 0; i < 5; i++) {
+        var placeName = response.results[i].poi.name
+        var distanceMet = response.results[i].dist
+        var distMilesDisplay = (distanceMet * 0.000621371).toFixed(2) + " miles"
+        var phoneNumDisplay = response.results[i].poi.phone
+        var urlDisplay = response.results[i].poi.url
+        var placeAddress = response.results[i].address.freeformAddress
+          $(`.title${i + 5}`).append(placeName)
+          $(`.link${i + 5}`).attr("href", `${urlDisplay}`)
+          $(`.recipe${i + 5}`).append(`<p>${distMilesDisplay} away</p>`)
+          $(`.recipe${i + 5}`).append(`<p>Phone Number: ${phoneNumDisplay}</p>`)
+          $(`.recipe${i + 5}`).append(`<p>Address: ${placeAddress}</p>`)
+          responseIdArray.push(response.results[i].id)
+      }
+
+      for (i = 0; i < responseIdArray.length; i++) {
+          responseIdArray[i]
+      }
+      
+      
+      console.log(response.results[i].id)
+      console.log(responseIdArray)
+      
+      
+      
+      var nutriUrl = `https://api.nutritionix.com/v1_1/search/${restaurant}?&appId=${nutriAppId}&appKey=${nutriApiKey}`
+      console.log(nutriUrl)
+      })
+      
+
+      $.ajax({
+        url: nutriUrl,
+        method: "GET"
+      }).then(function (response) {
+        var totalHits = response.hits
+// Attempting to loop through the items with nutritionix item id. Getting 404. Also making too many calls because of loop
+// for (var i = 0; i < totalHits.length; i++) {
+//   var itemId = response.hits[i].id
+//   var nutriAppId = "24813f7b"
+//   var restaurantUrl = `https://api.nutritionix.com/v1_1/food/menuItems/${itemId}?&appId=${nutriAppId}&appKey=${nutriApiKey}`
+//   console.log(restaurantUrl)
+//   $.ajax({
+//     url: restaurantUrl,
+//     method: "GET"
+//   }).then(function (response) {
+//   })
+//   }
+//      })
+      
+})
+})
+
+})
+
+
