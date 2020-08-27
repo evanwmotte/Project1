@@ -20,9 +20,59 @@
 <div class="tabs-content" data-tabs-content="example-tabs">
   
   <div class="tabs-panel is-active" id="panel1">
-    <p>Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.
-      Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat
-      nisl ut dapibus.</p>
+    
+    <div class="nutritionalForm">
+      <h2>Nutritional Calculator</h2>
+    
+      <p>We know that keeping track of calories can be very tough and sometimes
+      feel impossible. Well here at CE Nutrition, we're here to help make those
+      unmanageable micros and macros manageable. Simply enter your limits down below
+      and we'll take care of the tracking for you. We'll even suggest recipes to
+      help you meet your fitness goals. Before long we'll have you living the healthy
+      lifestyle you never thought was possible!
+      </p>
+    
+      <div class="grid-x grid-padding-x">
+        <label>
+          Enter your daily calorie limit:
+          <input type="number" class="input1" value="2000">
+        </label>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <label>
+          Enter your daily carb limit:
+          <input type="number" class="input2" value="100">
+        </label>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <label>
+          Enter your protein goal:
+          <input type="number" class="input3" value="100">
+        </label>
+      </div>
+      <div class="grid-x grid-padding-x">
+        <button type="submit" class="success button submitBtn1">Start tracking!</button>
+      </div>
+    </div>
+
+    <div class="nutritionalCounter hide">
+      <div class="secondary progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
+        <div class="progress-meter" style="width: 25%"></div>
+      </div>
+      
+      <div class="success progress">
+        <div class="progress-meter" style="width: 50%"></div>
+      </div>
+      
+      <div class="warning progress">
+        <div class="progress-meter" style="width: 50%"></div>
+      </div>
+      
+      <div class="alert progress">
+        <div class="progress-meter" style="width: 75%"></div>
+      </div>
+    </div>
+
   </div>
   
   <div class="tabs-panel" id="panel2">
@@ -34,7 +84,7 @@
         <input type="radio" name="pokemon" value="Yellow" id="pokemonYellow"><label for="pokemonYellow">Yellow</label>
       </fieldset>
     </div>
-    
+  
     <form>
       <div class="grid-container">
         <div class="grid-x grid-padding-x">
@@ -57,8 +107,9 @@
         </div>
         <div class="grid-x grid-margin-x">
           <div class="cell small-9">
-            <div class="slider" data-slider data-initial-start="600" data-end="1200" >
-              <span class="slider-handle"  data-slider-handle role="slider" tabindex="1" aria-controls="sliderOutput1"></span>
+            <div class="slider" data-slider data-initial-start="600" data-end="1200">
+              <span class="slider-handle" data-slider-handle role="slider" tabindex="1"
+                aria-controls="sliderOutput1"></span>
               <span class="slider-fill" data-slider-fill></span>
             </div>
           </div>
@@ -73,8 +124,9 @@
         </div>
         <div class="grid-x grid-margin-x">
           <div class="cell small-9">
-            <div class="slider" data-slider data-initial-start="50" data-end="100" >
-              <span class="slider-handle"  data-slider-handle role="slider" tabindex="2" aria-controls="sliderOutput2"></span>
+            <div class="slider" data-slider data-initial-start="50" data-end="100">
+              <span class="slider-handle" data-slider-handle role="slider" tabindex="2"
+                aria-controls="sliderOutput2"></span>
               <span class="slider-fill" data-slider-fill></span>
             </div>
           </div>
@@ -89,8 +141,9 @@
         </div>
         <div class="grid-x grid-margin-x">
           <div class="cell small-9">
-            <div class="slider" data-slider data-initial-start="50" data-end="100" >
-              <span class="slider-handle"  data-slider-handle role="slider" tabindex="3" aria-controls="sliderOutput3"></span>
+            <div class="slider" data-slider data-initial-start="50" data-end="100">
+              <span class="slider-handle" data-slider-handle role="slider" tabindex="3"
+                aria-controls="sliderOutput3"></span>
               <span class="slider-fill" data-slider-fill></span>
             </div>
           </div>
@@ -100,7 +153,7 @@
         </div>
       </div>
     </form>
-
+  
     <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title title0"></a>
@@ -142,7 +195,7 @@
           <h2 class="small-12-cell">Search for restaurants near you!</h2>
           <div class="small-12 cell">
             <label>Enter your address (format: 123 Memory Lane Charlotte, NC 28210)
-              <input type="text"  class="address" placeholder="Address format: 123 Memory Lane Charlotte, NC 28210">
+              <input type="text" class="address" placeholder="Address format: 123 Memory Lane Charlotte, NC 28210">
             </label>
           </div>
           <div class="small-12 cell">
@@ -159,7 +212,7 @@
         </div>
       </div>
     </form>
-    
+  
     <ul class="accordion" data-accordion data-multi-expand="true" data-allow-all-closed="true">
       <li class="accordion-item" data-accordion-item>
         <a href="#" class="accordion-title title5"></a>
@@ -197,16 +250,17 @@
         </div>
       </li>
     </ul>
-
   </div>
 </div>
-
-    
-
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/vendor/what-input.js"></script>
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/location.js"></script>
+  
+  
+  
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/vendor/what-input.js"></script>
+  <script src="js/vendor/foundation.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/location.js"></script>
+  <script src="js/calculator.js"></script>
   </body>
-</html>
+  
+  </html>
