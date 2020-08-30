@@ -89,8 +89,6 @@ function progressBars() {
 }
 
 $(".updateBtn1").on("click", function() {
-    event.preventDefault()
-    event.stopPropagation()
     var calUpdate = $(".update1").val()
     var carUpdate = $(".update2").val()
     var proUpdate = $(".update3").val()
@@ -118,7 +116,7 @@ $(".recipeUpdateBtn1").on("click", function() {
     $(".updateModal1").append(`<label class="caloriesToUpdate">Calories to update: ${calculateCal}</label>`)
     $(".updateModal1").append(`<label class="carbsToUpdate">Carbs to update: ${calculateCar}</label>`)
     $(".updateModal1").append(`<label class="proteinToUpdate">Protein to update: ${calculatePro}</label>`)
-    $(".updateModal1").append(`<button class="finalUpdate success button" data-close type="button">Submit Changes!</button>`)
+    $(".updateModal1").append(`<button class="finalUpdate success button" data-close type="button">Changes Submitted - Close</button>`)
     
     var updatedCal = parseInt($(".bar1").attr(`aria-valuenow`)) + parseInt(calculateCal)
     $(".bar1").attr(`aria-valuenow`, updatedCal)
@@ -144,7 +142,7 @@ $(".recipeUpdateBtn2").on("click", function() {
     $(".updateModal2").append(`<label class="caloriesToUpdate">Calories to update: ${calculateCal}</label>`)
     $(".updateModal2").append(`<label class="carbsToUpdate">Carbs to update: ${calculateCar}</label>`)
     $(".updateModal2").append(`<label class="proteinToUpdate">Protein to update: ${calculatePro}</label>`)
-    $(".updateModal2").append(`<button class="finalUpdate success button" data-close type="button">Submit Changes!</button>`)
+    $(".updateModal2").append(`<button class="finalUpdate success button" data-close type="button">Changes Submitted - Close</button>`)
     
     var updatedCal = parseInt($(".bar1").attr(`aria-valuenow`)) + parseInt(calculateCal)
     $(".bar1").attr(`aria-valuenow`, updatedCal)
@@ -169,7 +167,7 @@ $(".recipeUpdateBtn3").on("click", function() {
     $(".updateModal3").append(`<label class="caloriesToUpdate">Calories to update: ${calculateCal}</label>`)
     $(".updateModal3").append(`<label class="carbsToUpdate">Carbs to update: ${calculateCar}</label>`)
     $(".updateModal3").append(`<label class="proteinToUpdate">Protein to update: ${calculatePro}</label>`)
-    $(".updateModal3").append(`<button class="finalUpdate success button" data-close type="button">Submit Changes!</button>`)
+    $(".updateModal3").append(`<button class="finalUpdate success button" data-close type="button">Changes Submitted - Close</button>`)
     
     var updatedCal = parseInt($(".bar1").attr(`aria-valuenow`)) + parseInt(calculateCal)
     $(".bar1").attr(`aria-valuenow`, updatedCal)
@@ -194,7 +192,7 @@ $(".recipeUpdateBtn4").on("click", function() {
     $(".updateModal4").append(`<label class="caloriesToUpdate">Calories to update: ${calculateCal}</label>`)
     $(".updateModal4").append(`<label class="carbsToUpdate">Carbs to update: ${calculateCar}</label>`)
     $(".updateModal4").append(`<label class="proteinToUpdate">Protein to update: ${calculatePro}</label>`)
-    $(".updateModal4").append(`<button class="finalUpdate success button" data-close type="button">Submit Changes!</button>`)
+    $(".updateModal4").append(`<button class="finalUpdate success button" data-close type="button">Changes Submitted - Close</button>`)
     
     var updatedCal = parseInt($(".bar1").attr(`aria-valuenow`)) + parseInt(calculateCal)
     $(".bar1").attr(`aria-valuenow`, updatedCal)
@@ -219,7 +217,7 @@ $(".recipeUpdateBtn5").on("click", function() {
     $(".updateModal5").append(`<label class="caloriesToUpdate">Calories to update: ${calculateCal}</label>`)
     $(".updateModal5").append(`<label class="carbsToUpdate">Carbs to update: ${calculateCar}</label>`)
     $(".updateModal5").append(`<label class="proteinToUpdate">Protein to update: ${calculatePro}</label>`)
-    $(".updateModal5").append(`<button class="finalUpdate success button" data-close type="button">Submit Changes!</button>`)
+    $(".updateModal5").append(`<button class="finalUpdate success button" data-close type="button">Changes Submitted - Close</button>`)
     
     var updatedCal = parseInt($(".bar1").attr(`aria-valuenow`)) + parseInt(calculateCal)
     $(".bar1").attr(`aria-valuenow`, updatedCal)
