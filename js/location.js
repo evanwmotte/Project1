@@ -32,10 +32,6 @@ $.ajax({
     method: "GET"
   }).then(function (response) {
     console.log(response)
-      
-      //var nutriAppId = "24813f7b"
-      //var nutriApiKey = "b5ba0affef96ec2e56a79c6a3f3e155c"
-      //var restaurant = poiName.trim().replace(/ /g, '%20')
       for (i = 0; i < 5; i++) {
         var placeName = response.results[i].poi.name
         var distanceMet = response.results[i].dist
@@ -71,19 +67,6 @@ $.ajax({
         method: "GET"
       }).then(function (response) {
         var totalHits = response.hits
-// Attempting to loop through the items with nutritionix item id. Getting 404. Also making too many calls because of loop
-// for (var i = 0; i < totalHits.length; i++) {
-//   var itemId = response.hits[i].id
-//   var nutriAppId = "24813f7b"
-//   var restaurantUrl = `https://api.nutritionix.com/v1_1/food/menuItems/${itemId}?&appId=${nutriAppId}&appKey=${nutriApiKey}`
-//   console.log(restaurantUrl)
-//   $.ajax({
-//     url: restaurantUrl,
-//     method: "GET"
-//   }).then(function (response) {
-//   })
-//   }
-//      })
       
 })
 })

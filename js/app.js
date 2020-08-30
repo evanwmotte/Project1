@@ -1,16 +1,10 @@
 $(document).foundation()
 
-$(".myMealType").on("click", function() {   
-  event.preventDefault()   
-  var mealTypeChoice = this.value.trim()   
-  var typeChoiceSearch = mealTypeChoice.replace(/\s+/g, '').toLowerCase()   
-  console.log(mealTypeChoice)   
-  $(".typeSelector").text(mealTypeChoice)   
-  $(".typeSelector").addClass("success")
 
 
 $(".searchBtn").on("click", function () {
   event.preventDefault()
+  event.stopPropagation()
   var cuisine = $(".cuisine").val().trim()
   var cravings = $(".cravings").val().trim()
   var maxCalories = $("#sliderOutput1").val()
@@ -19,8 +13,7 @@ $(".searchBtn").on("click", function () {
   console.log(cuisine)
   console.log(cravings)
 
-
-  var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + cravings + "&cuisine=" + cuisine + "&type=" + typeChoiceSearch + "&maxCalories=" + maxCalories + "&maxCarbs=" + maxCarbs + "&maxProtein=" + maxProtein + "&addRecipeInformation=true&sort=random&apiKey=5accba34b6cd4c4cbe664a6e1e39df48"
+  var queryURL = "https://api.spoonacular.com/recipes/complexSearch?query=" + cravings + "&cuisine=" + cuisine +"&maxCalories=" + maxCalories + "&maxCarbs=" + maxCarbs + "&maxProtein=" + maxProtein + "&addRecipeInformation=true&sort=random&apiKey=5accba34b6cd4c4cbe664a6e1e39df48"
 
   $.ajax({
     url: queryURL,
@@ -45,7 +38,7 @@ $(".searchBtn").on("click", function () {
     }
   })
 })
-})
+
 
 
 
