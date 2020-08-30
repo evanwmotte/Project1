@@ -3,6 +3,8 @@
     
 
 $(".submitBtn1").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var calorieCount = $(".input1").val()
     var carbCount = $(".input2").val()
     var proteinCount = $(".input3").val()
@@ -81,11 +83,14 @@ function progressBars() {
         $(".bar3").addClass("warning")
     } else if (proColor >.75 && proColor<= 1) {
         $(".bar3").removeClass("warning")
+        $(".bar3").removeClass("alert")
         $(".bar3").addClass("success")
     }
 }
 
 $(".updateBtn1").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var calUpdate = $(".update1").val()
     var carUpdate = $(".update2").val()
     var proUpdate = $(".update3").val()
@@ -100,6 +105,8 @@ $(".updateBtn1").on("click", function() {
 })
 
 $(".recipeUpdateBtn1").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var servingsEaten = parseInt($(".servingsEaten").val())
     var pullCal = $(".0a").attr("calNum0")
     var calculateCal = (servingsEaten * pullCal)
@@ -124,6 +131,8 @@ $(".recipeUpdateBtn1").on("click", function() {
 })
 
 $(".recipeUpdateBtn2").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var servingsEaten = parseInt($(".servingsEaten2").val())
     var pullCal2 = $(".1a").attr("calNum1")
     var calculateCal = (servingsEaten * pullCal2)
@@ -147,6 +156,8 @@ $(".recipeUpdateBtn2").on("click", function() {
 })
 
 $(".recipeUpdateBtn3").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var servingsEaten = parseInt($(".servingsEaten3").val())
     var pullCal3 = $(".2a").attr("calNum2")
     var calculateCal = (servingsEaten * pullCal3)
@@ -170,6 +181,8 @@ $(".recipeUpdateBtn3").on("click", function() {
 })
 
 $(".recipeUpdateBtn4").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var servingsEaten = parseInt($(".servingsEaten4").val())
     var pullCal4 = $(".3a").attr("calNum3")
     var calculateCal = (servingsEaten * pullCal4)
@@ -193,6 +206,8 @@ $(".recipeUpdateBtn4").on("click", function() {
 })
 
 $(".recipeUpdateBtn5").on("click", function() {
+    event.preventDefault()
+    event.stopPropagation()
     var servingsEaten = parseInt($(".servingsEaten5").val())
     var pullCal5 = $(".4a").attr("calNum4")
     var calculateCal = (servingsEaten * pullCal5)
