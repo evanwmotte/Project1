@@ -45,7 +45,7 @@ $(".searchBtn").on("click", function () {
       $(`.recipe${i}`).append(`<h2 class="modalText ${i}a" calNum${i}="${servingCal}">Calories per Serving: ${servingCal}</h2>`)
       $(`.recipe${i}`).append(`<h3 class="modalText ${i}b" carNum${i}="${servingCar}">Carbs per Serving: ${servingCar}</h3>`)
       $(`.recipe${i}`).append(`<h4 class="modalText ${i}c" proNum${i}="${servingPro}">Protein per Serving: ${servingPro}</h4>`)
-      $(`.recipe${i}`).append(`<a class="modalText" href='${recipe}'>Click here for the recipe!</a>`)
+      $(`.recipe${i}`).append(`<a class="modalText" href='${recipe}' target="_blank">Click here for the recipe!</a>`)
     }
   })
 })
